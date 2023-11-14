@@ -33,7 +33,7 @@
         border-radius: 3rem;
       }
 
-      .btn:hover {
+      .btn:hover{
         transform: scale(1.1);
         transition: 0.3s ease;
       }
@@ -41,21 +41,19 @@
   </head>
 
   <body>
-    <h1 class="display-2 bg-success text-center">
-      Pendeteksi Hama berbasis Machine Learning
-    </h1>
+    <h1 class="display-2 bg-success text-center">Pendeteksi Hama berbasis Machine Learning</h1>
     <div class="akong vstack gap-5">
       <button
         type="button"
         class="btn w-50 align-self-center align-middle btn-outline-warning"
-        onclick="goToParasit()"
+        onclick="window.location.href = 'home';"
       >
         Parasit
       </button>
       <button
         type="button"
         class="btn w-50 align-self-center align-middle btn-outline-primary"
-        onclick="goToNonParasit()"
+        onclick="window.location.href = 'option_2.html';"
       >
         Non-Parasit
       </button>
@@ -65,13 +63,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script>
-      function goToParasit() {
-        window.location.href = "parasit_home.html";
-      }
-      function goToNonParasit() {
-        window.location.href = "nonparasit_home.html";
-      }
-    </script>
   </body>
 </html>
