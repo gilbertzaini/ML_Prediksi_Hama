@@ -18,8 +18,9 @@ def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 	
 @app.route('/')
-def home():
+def index():
     return render_template('home.html')
+	
 
 @app.route('/inference', methods=['POST'])
 def inference_image():
@@ -64,5 +65,5 @@ def display_image(filename):
 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
