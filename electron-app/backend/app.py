@@ -16,6 +16,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/', methods=['GET'])
+def running():
+    return 'Backend is running'
+
 @app.route('/inference', methods=['POST'])
 def inference_image():
     if 'file' not in request.files:
@@ -65,4 +69,4 @@ def inference_image():
         return jsonify({'error': 'Allowed image types are -> png, jpg, jpeg, gif'}), 400
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(port=5555, debug=True)

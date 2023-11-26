@@ -61,7 +61,7 @@
 	<p class="text-muted"> Nematode Classification using deep learning to identify and classify Nematodes commonly found in Indonesian soil  </p>
 	<div class="row py-4">
 		<div class="col-md-6 mx-auto border border-secondary">
-			<form method="post" action="/inference" enctype="multipart/form-data">
+			<form method="post" action="/parasit/inference" enctype="multipart/form-data">
 				<div class="input-group px-2 pt-4 py-2">
 					<input id="upload" name="file" type="file" onchange="readURL(this);" class=" border-0" hidden>
 					<input id="text-placeholder" type="text" disabled class="form-control border-0" title="" class="bg-primary">
@@ -89,6 +89,14 @@
 		</div>
 	</div>	
 </div>
+{% endblock %}
+
+{% block model %}
+EfficientNetV2B0
+{% endblock %}
+
+{% block updated %}
+July 20, 2022
 {% endblock %}
 
 {% block scripts %}

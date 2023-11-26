@@ -44,9 +44,9 @@
             <section class="">
                 <div class="container text-md-start mx-0 px-5">
                     <div class="row mt-3">
-                        <h6 class="text-uppercase fw-bold mb-1" style="font-size: 0.9rem;">Current model: EfficientNetV2B0</h6>
+                        <h6 class="text-uppercase fw-bold mb-1" style="font-size: 0.9rem;">Current model: {% block model %}{% endblock %}</h6>
                         <p style="font-size:0.7rem;">
-                            Model last updated at: July 20, 2022
+                            Model last updated at: {% block updated %}{% endblock %}
                         </p>
                     </div>
                 </div> 
