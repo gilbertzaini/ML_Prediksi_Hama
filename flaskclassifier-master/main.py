@@ -1,6 +1,6 @@
 import os
 from app import app
-from predict_classes import  local_classes
+from predict_classes import local_classes, nonparasit_classes
 from flask import Flask, flash, request, redirect, url_for, render_template
 from werkzeug.utils import secure_filename
 import tensorflow as tf
@@ -61,7 +61,7 @@ def inference_image_parasit():
 		percentage = round(np.amax(res)*100.0, 2)
 		inference = local_classes[np.argmax(res)]
         
-		return render_template('inference.html', filename=filename, inference=inference, percentage=percentage)
+		return render_template('parasit-inference.html', filename=filename, inference=inference, percentage=percentage)
 	else:
 		flash('Allowed image types are -> png, jpg, jpeg, gif')
 		return render_template('inference.html')
@@ -96,9 +96,9 @@ def inference_image_nonparasit():
 		res = model.predict(resized_img)
 
 		percentage = round(np.amax(res)*100.0, 2)
-		inference = local_classes[np.argmax(res)]
+		inference = nonparasit_classes[np.argmax(res)]
         
-		return render_template('inference.html', filename=filename, inference=inference, percentage=percentage)
+		return render_template('nonparasit-inference.html', filename=filename, inference=inference, percentage=percentage)
 	else:
 		flash('Allowed image types are -> png, jpg, jpeg, gif')
 		return render_template('inference.html')

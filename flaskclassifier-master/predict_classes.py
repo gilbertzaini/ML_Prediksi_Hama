@@ -39,5 +39,10 @@ local_classes = [
     "Genus Radopholus",
     "Genus Trichodorus",
     "Genus Xiphinema",
+]
 
+nonparasit_classes = [
+    "Bacterivore",
+    "Fungivore",
+    "Predator-omnivore"
 ]
