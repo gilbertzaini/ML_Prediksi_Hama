@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block title %} Python Flask Model Inference Example {% endblock %}
+{% block head %}
+	{{ super() }}
+{% endblock %}
+{% block styles %}
+{{super()}}
+<style>
+
+#upload {
+	opacity: 0;
+}
+
+#upload-label {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	transform: translateY(-50%);
+}
+	
+.image-area {
+	border: 2px dashed #5d5d5d;
+    padding: 1rem;
+    position: relative;
+	min-height: 20vh;
+	border-color: #22676f;
+}
+
+.image-area::before {
+    color: #22676f;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+    z-index: 1;
+}
+
+.image-area img {
+	z-index: 2;
+    position: relative;
+}
+
+</style>
+
+{% endblock %}
+{% block content %}
+<div class="text-center container-fluid my-auto py-3">
+	<h1 class="font-weight-bold align-middle" style="color: #3ac4b4;">Automatic Identification of Plant-Parasitic Nematode</h1>
+	<p class="mb-0 text-muted">Inference Result</p>
+	<div class="row py-2">
+		<div class="col-md-6 mx-auto border border-secondary">
+			{% if filename %}
+			<!-- Uploaded image area-->
+			<div class="col-lg-7 mx-auto">
+				<div class="image-area mt-4 mx-auto">
+					<img id="imageResult" src="{{ url_for('display_image', filename=filename) }}" alt="" class="img-fluid rounded shadow-sm mx-auto d-block">
+				</div>
+			</div>
+
+			<div class="container mt-3">
+				<h4 class="font-weight-bold" style="color: #3ac4b4;">Identification Result</h3>	
+				<p class="font-weight-bold text-muted">{{inference}}, {{percentage}}%</p>
+			</div>
+
+			<a href="/">
+				<button class="btn btn-info mb-3" style="background-color:#3ab6c4">
+					<p class="text-white p-0 m-0">Upload another image</p>
+				</button>
+			</a>
+			{% endif %}
+			<p>
+				{% with messages = get_flashed_messages() %}
+				  {% if messages %}
+					<ul>
+					{% for message in messages %}
+					  <li>{{ message }}</li>
+					{% endfor %}
+					</ul>
+				  {% endif %}
+				{% endwith %}
+			</p>
+			{% if not filename %}
+			<a href="/">
+				<button class="btn btn-primary mb-3" style="background-color:#3ab6c4">
+					Back to home
+				</button>
+			</a>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block model %}
+EfficientNetV2B0
+{% endblock %}
+
+{% block updated %}
+July 20, 2022
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+{{super()}}
+{% endblock %}
+
