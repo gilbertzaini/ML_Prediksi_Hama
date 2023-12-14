@@ -6,7 +6,9 @@ from werkzeug.utils import secure_filename
 import tensorflow as tf
 import numpy as np
 import keras
+import webview
 
+window = webview.create_window('Nematode Identification App', app)
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 PROJECT_NAME = "nema-online-classifier"
@@ -109,5 +111,6 @@ def display_image(filename):
 	return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 if __name__ == "__main__":
-    app.run()
+    # app.run()
+    webview.start();
 
