@@ -15,6 +15,19 @@
         background-color: rgb(219, 240, 223);
       }
 
+      .aboutUs {
+        align-items: center;
+      }
+
+      p {
+        width: 80%;
+        padding: 20px;
+        /* margin: 10px; */
+        /* text-align: center; */
+        padding-left: 19%;
+        /* font-size: 1rem; */
+      }
+
       h1 {
         color: rgb(224, 234, 210);
         height: 8rem;
@@ -28,8 +41,13 @@
         margin-bottom: 1rem; */
       }
 
+      h2 {
+        color: #1a8754;
+      }
+
       .akong {
-        margin-top: 12%;
+        margin-top: 5%;
+        padding-left: 15%;
       }
 
       .btn {
@@ -39,9 +57,10 @@
         border-width: 0.5rem;
         font-weight: 2rem;
         font-size: 4rem;
+        width: 40%;
       }
-      
-      .btn:hover{
+
+      .btn:hover {
         transform: scale(1.1);
         transition: 0.3s ease;
       }
@@ -49,19 +68,49 @@
   </head>
 
   <body>
-    <h1 class="display-2 bg-success text-center">Nematode Identification Web App</h1>
-    <div class="akong vstack gap-5">
-      <button
+    <h1 class="display-2 bg-success text-center">Nema-App</h1>
+    <div id="aboutUs">
+      <h2 class="display-4 text-center">About Us</h2>
+      <p class="lead" style="font-size: 20px">
+        This application provide an automatic nematode image-based
+        identification which developed based on deep learning approach. Nema-App
+        accept images taken from microscopy, ideally at magnification of
+        40-1000, in jpeg or png format. Nema-App divided into two main menus:
+        parasitic and non parasitic. Parasitic classify the herbivores or
+        parasitic nematodes based on its genus, including : Genus Criconema,
+        Genus Criconemoides, Genus Helicotylenchus, Genus Hemicycliophora, Genus
+        Hirschmanniella, Genus Hoplolaimus, Genus Meloidogyne, Genus
+        Pratylenchus, Genus Radopholus, Genus Trichodorus, Genus Xiphinema.
+        Non-parasitic classify the non prasitic nematode based on its feeding
+        behaviour, including bacterivore, fungivore, and predator-omnivore.
+        Moreover, this menu will provide the ecological indices value
+        represented in c-p value.
+      </p>
+    </div>
+    <div class="akong hstack gap-5">
+      <!-- <button
         type="button"
-        class="btn w-50 align-self-center align-middle btn-outline-success"
+        class="btn align-self-center align-middle btn-outline-success"
         onclick="window.location.href = 'parasit';"
       >
         Parasit
-      </button>
+      </button> -->
       <button
         type="button"
-        class="btn w-50 align-self-center align-middle btn-outline-success"
+        class="btn align-self-center align-middle btn-outline-success"
+        onclick="window.location.href = 'parasit';"
+        data-bs-toggle="tooltip"
+        title="use this menu when you want to classify the parasitic nematode based on its genus"
+      >
+        Parasit
+      </button>
+
+      <button
+        type="button"
+        class="btn align-self-center align-middle btn-outline-success"
         onclick="window.location.href = 'non-parasit';"
+        data-bs-toggle="tooltip"
+        title="use this menu when you want to classify the non-parasitic nematode based on its feeding behaviour"
       >
         Non-Parasit
       </button>
@@ -71,5 +120,15 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tooltipTriggerList = document.querySelectorAll(
+          '[data-bs-toggle="tooltip"]'
+        );
+        const tooltipList = [...tooltipTriggerList].map(
+          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+        );
+      });
+    </script>
   </body>
 </html>
