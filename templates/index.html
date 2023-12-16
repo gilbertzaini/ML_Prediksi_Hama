@@ -12,7 +12,7 @@
     />
     <style>
       body {
-        background-color: #9ECAAF;
+        background-color: #004020;
       }
 
       .aboutUs {
@@ -30,7 +30,7 @@
       
       .separator {
         height: 5px;
-        background-color: #6EA853; /* Adjust color as needed */
+        background-color: #2E7601; /* Adjust color as needed */
         margin-top: 25px;
         margin-bottom: 25px;
         margin-left: 15%;
@@ -75,55 +75,114 @@
         font-size: 20px;
       }
 
-      h1 {
-        color: #005900;
-        /* height: 10rem; */
-        margin-top: auto;
-        text-align: center;
-        justify-content: center;
-        font-size: medium;
-        font-weight: 1rem;
-        padding-top: 1rem;
-        /* margin-top: 1rem;
-        margin-bottom: 1rem; */
-      }
-
+      
       h2 {
         color: #1a8754;
       }
-
+      
       .akong {
-        margin-top: 2%;
-        padding-left: 15%;
+        margin-top: 4%;
+        padding-left: 25%;
       }
-
+      
       .btn {
-        height: 10rem;
-        font-size: 3rem;
-        border-radius: 3rem;
+        height: 7rem;
+        font-size: 1rem;
+        border-radius: 2rem;
         border-width: 0.5rem;
-        font-weight: 2rem;
-        font-size: 4rem;
-        width: 40%;
+        font-weight: 500;
+        font-size: 3rem;
+        width: 30%;
+        background-image: linear-gradient(#DDEBD2, #5BA115);
+        color: #FFFFFF;
       }
-
+      
       .btn:hover {
         transform: scale(1.1);
         transition: 0.3s ease;
-        color: transparent;
       }
 
+      /* .hero {
+          position: relative; 
+          height: 100vh;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .hero::before {    
+            content: "";
+            background-image: url('https://placekitten.com/1200/800');
+            background-size: cover;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            opacity: 0.75;
+      } */
+
+      /* h1 {
+        position: relative;
+        color: #ffffff;  
+        font-size: 14rem;
+        line-height: 0.9;
+        text-align: center;
+      } */
+
+      .headerimg {
+        position: relative;
+        height: 15rem;
+        background-size: cover;
+        font-size: 5rem;
+        font-weight: 900;
+        padding-top: 4rem;
+        opacity: 1;
+      }
+
+      .headerimg::before {
+        content: "";
+        background-image: url(../assets/background.png);
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.4; /* Adjust the opacity as needed (0.0 to 1.0) */
+      }
+
+      .headertxt {
+        position: relative;
+        /* color: #005900; */
+        margin-top: auto;
+        text-align: center;
+        justify-content: center;
+        font-size: 5rem;
+        font-weight: 1rem;
+        padding-top: 1rem;
+        z-index: 1; /* Ensure the text is above the background overlay */
+      }
+
+      h1{
+        margin-top: auto;
+        text-align: center;
+        justify-content: center;
+      }
+
+      
     </style>
   </head>
 
   <body>
-    <h1 
-      class="display-2 text-center" 
-      style="background:url(../assets/background.png);background-size: cover;font-size:5rem;font-weight: 900;height: 15rem;padding-top: 4rem;">
-      Nema-App
-    </h1>
+    <h1 class="headerimg text-center">
+      <div class="headertxt">
+        <span style="color: #72E077;">Nema</span><span style="color: #FFFFFF;">App</span>
+      </div>
+    </h1>    
     <div id="aboutUs">
-      <p class="lead" style="font-size: 25px;text-align: center;">
+      <p class="lead" style="font-size: 25px;text-align: center;color: #B7C5BC;">
         This application provide an automatic nematode image-based
         identification which developed based on deep learning approach. Nema-App
         accept images taken from microscopy, ideally at magnification of
@@ -147,13 +206,13 @@
         </ul>
       </div> -->
     </div>
-    <div class="container" style="background-color: #1F2E1D;max-width: max-content;">
-      <h1 style="color: #7DBC76;font-size: 4rem;">Menu</h1>
+    <div class="container" style="background-color: #D6E8D5;max-width: max-content;">
+      <h1 style="color: #015F00;font-size: 2rem;">Menu</h1>
       <div class="row row-cols-2">
-        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #799B84;font-weight: 700;">
+        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #497257;font-weight: 700;">
            Parasitic 
         </div>
-        <div class="col-12" style="text-align: justify;color: #7DBC76;max-width: 60%;font-size: large;"> 
+        <div class="col-12" style="text-align: justify;color: #015F00;max-width: 60%;font-size: large;"> 
           classify the herbivores or parasitic nematodes based on its genus, including : Genus Criconema,
           Genus Criconemoides, Genus Helicotylenchus, Genus Hemicycliophora, Genus Hirschmanniella, Genus Hoplolaimus,
           Genus Meloidogyne, Genus Pratylenchus, Genus Radopholus, Genus Trichodorus, Genus Xiphinema.
@@ -161,10 +220,10 @@
       </div>
       <div class="separator"></div>
       <div class="row row-cols-2">
-        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #799B84;font-weight: 700;">
+        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #497257;font-weight: 700;">
           Non-Parasitic
         </div>
-        <div class="col-10" style="text-align: justify;color: #7DBC76;margin-bottom: 2rem;max-width: 60%;font-size: large;">
+        <div class="col-10" style="text-align: justify;color: #015F00;margin-bottom: 2rem;max-width: 60%;font-size: large;">
           classify the non prasitic nematode based on its feeding behaviour, including bacterivore, fungivore, and 
           predator-omnivore. Moreover, this menu will provide the ecological indices value represented in c-p value.
         </div>
@@ -177,8 +236,6 @@
         type="button"
         class="btn align-self-center align-middle btn-outline-success"
         onclick="window.location.href = 'parasit';"
-        data-bs-toggle="tooltip"
-        title="use this menu when you want to classify the parasitic nematode based on its genus"
       >
         Parasitic
       </button>
@@ -187,8 +244,6 @@
         type="button"
         class="btn align-self-center align-middle btn-outline-success"
         onclick="window.location.href = 'non-parasit';"
-        data-bs-toggle="tooltip"
-        title="use this menu when you want to classify the non-parasitic nematode based on its feeding behaviour"
       >
         Non-Parasitic
       </button>
@@ -198,15 +253,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const tooltipTriggerList = document.querySelectorAll(
-          '[data-bs-toggle="tooltip"]'
-        );
-        const tooltipList = [...tooltipTriggerList].map(
-          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-        );
-      });
-    </script>
   </body>
 </html>
