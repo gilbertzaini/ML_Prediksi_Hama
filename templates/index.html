@@ -12,14 +12,14 @@
     />
     <style>
       body {
-        background-color: rgb(219, 240, 223);
+        background-color: #9ECAAF;
       }
 
       .aboutUs {
         align-items: center;
       }
 
-      p {
+      .lead {
         width: 80%;
         padding: 20px;
         /* margin: 10px; */
@@ -27,15 +27,62 @@
         padding-left: 19%;
         /* font-size: 1rem; */
       }
+      
+      .separator {
+        height: 5px;
+        background-color: #6EA853; /* Adjust color as needed */
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 15%;
+        margin-right: 15%;
+        max-width: 1400px;
+      }
+
+    
+      .secondlead{
+        padding-left: 20px;
+      }
+      
+      .tooltip-inner {
+        font-size: 20px; /* Adjust the font size as needed */
+        /* background-color: transparent; */
+      }
+
+
+      .tooltip-inner:hover{
+        background-color: transparent;
+        color: transparent;
+        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+      }
+
+      ul{
+        width: 100%;
+        /* padding: 20px; */
+        /* padding-top: 10px; */
+        /* margin: 10px; */
+        /* text-align: center; */
+        padding-left: 20%;
+        /* font-size: 1rem; */
+      }
+
+      li h1 h2 p {
+        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+      }
+
+      li{
+        padding:10px;
+        width: 80%;
+        font-size: 20px;
+      }
 
       h1 {
-        color: rgb(224, 234, 210);
-        height: 8rem;
+        color: #005900;
+        /* height: 10rem; */
         margin-top: auto;
         text-align: center;
         justify-content: center;
         font-size: medium;
-        font-weight: bold;
+        font-weight: 1rem;
         padding-top: 1rem;
         /* margin-top: 1rem;
         margin-bottom: 1rem; */
@@ -46,7 +93,7 @@
       }
 
       .akong {
-        margin-top: 5%;
+        margin-top: 2%;
         padding-left: 15%;
       }
 
@@ -63,38 +110,69 @@
       .btn:hover {
         transform: scale(1.1);
         transition: 0.3s ease;
+        color: transparent;
       }
+
     </style>
   </head>
 
   <body>
-    <h1 class="display-2 bg-success text-center">Nema-App</h1>
+    <h1 
+      class="display-2 text-center" 
+      style="background:url(../assets/background.png);background-size: cover;font-size:5rem;font-weight: 900;height: 15rem;padding-top: 4rem;">
+      Nema-App
+    </h1>
     <div id="aboutUs">
-      <h2 class="display-4 text-center">About Us</h2>
-      <p class="lead" style="font-size: 20px">
+      <p class="lead" style="font-size: 25px;text-align: center;">
         This application provide an automatic nematode image-based
         identification which developed based on deep learning approach. Nema-App
         accept images taken from microscopy, ideally at magnification of
-        40-1000, in jpeg or png format. Nema-App divided into two main menus:
-        parasitic and non parasitic. Parasitic classify the herbivores or
-        parasitic nematodes based on its genus, including : Genus Criconema,
-        Genus Criconemoides, Genus Helicotylenchus, Genus Hemicycliophora, Genus
-        Hirschmanniella, Genus Hoplolaimus, Genus Meloidogyne, Genus
-        Pratylenchus, Genus Radopholus, Genus Trichodorus, Genus Xiphinema.
-        Non-parasitic classify the non prasitic nematode based on its feeding
-        behaviour, including bacterivore, fungivore, and predator-omnivore.
-        Moreover, this menu will provide the ecological indices value
-        represented in c-p value.
+        40-1000, in jpeg or png format. 
       </p>
+      <!-- <div class="secondlead" style="font-size: 20px; text-align: justify; padding-left: 19%; padding-right: 19%;">
+        <div style="text-align: justify;padding-left: 19%;">
+          Nema-App divided into two main menus: parasitic and non parasitic.  
+        </div>
+        <ul>
+            <li>
+                Parasitic classify the herbivores or parasitic nematodes based on its genus, including : Genus Criconema,
+                Genus Criconemoides, Genus Helicotylenchus, Genus Hemicycliophora, Genus Hirschmanniella, Genus Hoplolaimus,
+                Genus Meloidogyne, Genus Pratylenchus, Genus Radopholus, Genus Trichodorus, Genus Xiphinema.
+            </li>
+            <li>
+                Non-parasitic classify the non prasitic nematode based on its feeding behaviour, including bacterivore,
+                fungivore, and predator-omnivore. Moreover, this menu will provide the ecological indices value represented
+                in c-p value.
+            </li>
+        </ul>
+      </div> -->
+    </div>
+    <div class="container" style="background-color: #1F2E1D;max-width: max-content;">
+      <h1 style="color: #7DBC76;font-size: 4rem;">Menu</h1>
+      <div class="row row-cols-2">
+        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #799B84;font-weight: 700;">
+           Parasitic 
+        </div>
+        <div class="col-12" style="text-align: justify;color: #7DBC76;max-width: 60%;font-size: large;"> 
+          classify the herbivores or parasitic nematodes based on its genus, including : Genus Criconema,
+          Genus Criconemoides, Genus Helicotylenchus, Genus Hemicycliophora, Genus Hirschmanniella, Genus Hoplolaimus,
+          Genus Meloidogyne, Genus Pratylenchus, Genus Radopholus, Genus Trichodorus, Genus Xiphinema.
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="row row-cols-2">
+        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #799B84;font-weight: 700;">
+          Non-Parasitic
+        </div>
+        <div class="col-10" style="text-align: justify;color: #7DBC76;margin-bottom: 2rem;max-width: 60%;font-size: large;">
+          classify the non prasitic nematode based on its feeding behaviour, including bacterivore, fungivore, and 
+          predator-omnivore. Moreover, this menu will provide the ecological indices value represented in c-p value.
+        </div>
+      </div>
+    </div>
+
     </div>
     <div class="akong hstack gap-5">
-      <!-- <button
-        type="button"
-        class="btn align-self-center align-middle btn-outline-success"
-        onclick="window.location.href = 'parasit';"
-      >
-        Parasit
-      </button> -->
       <button
         type="button"
         class="btn align-self-center align-middle btn-outline-success"
@@ -102,7 +180,7 @@
         data-bs-toggle="tooltip"
         title="use this menu when you want to classify the parasitic nematode based on its genus"
       >
-        Parasit
+        Parasitic
       </button>
 
       <button
@@ -112,7 +190,7 @@
         data-bs-toggle="tooltip"
         title="use this menu when you want to classify the non-parasitic nematode based on its feeding behaviour"
       >
-        Non-Parasit
+        Non-Parasitic
       </button>
     </div>
     <script
