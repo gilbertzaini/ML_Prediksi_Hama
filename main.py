@@ -42,6 +42,10 @@ def inference_image_parasit():
 		return render_template('inference.html')
 	if file and allowed_file(file.filename):
 		filename = secure_filename(file.filename)
+  
+		if not os.path.exists('static/uploads'):
+			os.makedirs('static/uploads')
+  
 		path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
 		file.save(path)
 		os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
@@ -70,40 +74,54 @@ def inference_image_parasit():
 
 @app.route('/non-parasit/inference', methods=['POST'])
 def inference_image_nonparasit():
-	if 'file' not in request.files:
-		flash('File part is missing')
-		return render_template('inference.html')
-	file = request.files['file']
-	if file.filename == '':
-		flash('No image selected for uploading')
-		return render_template('inference.html')
-	if file and allowed_file(file.filename):
-		filename = secure_filename(file.filename)
-		path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-		file.save(path)
-		os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
-		os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
-		
-		model = keras.models.load_model("model/retrain_nonoversampling_densenet121.h5")
-		
-		img = tf.io.read_file(path)
-		img = tf.io.decode_image(img, channels=3, dtype=tf.float32)
-		img = tf.image.grayscale_to_rgb(tf.image.rgb_to_grayscale(img))
-		img = (img - 0.5) / 0.5  
+    if 'file' not in request.files:
+        flash('File part is missing')
+        return render_template('inference.html')
 
-		resized_img = tf.image.resize(img, [224, 224])
-		resized_img = np.expand_dims(resized_img, axis=0)
-		
-        #get prediction
-		res = model.predict(resized_img)
+    file = request.files['file']
 
-		percentage = round(np.amax(res)*100.0, 2)
-		inference = nonparasit_classes[np.argmax(res)]
-        
-		return render_template('nonparasit-inference.html', filename=filename, inference=inference, percentage=percentage)
-	else:
-		flash('Allowed image types are -> png, jpg, jpeg, gif')
-		return render_template('inference.html')
+    if file.filename == '':
+        flash('No image selected for uploading')
+        return render_template('inference.html')
+
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+
+        if not os.path.exists('static/uploads'):
+            os.makedirs('static/uploads')
+
+        path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(path)
+        os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+        os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+
+        model = keras.models.load_model("model/retrain_nonoversampling_densenet121.h5")
+
+        img = tf.io.read_file(path)
+        img = tf.io.decode_image(img, channels=3, dtype=tf.float32)
+        img = tf.image.grayscale_to_rgb(tf.image.rgb_to_grayscale(img))
+        img = (img - 0.5) / 0.5
+
+        resized_img = tf.image.resize(img, [224, 224])
+        resized_img = np.expand_dims(resized_img, axis=0)
+
+        # get prediction
+        res = model.predict(resized_img)
+
+        percentage = round(np.amax(res) * 100.0, 2)
+        inference = nonparasit_classes[np.argmax(res)]
+
+        if np.argmax(res) == 0:
+            cpval = "1-2"
+        elif np.argmax(res) == 1:
+            cpval = "2"
+        else:
+            cpval = "4"
+
+        return render_template('nonparasit-inference.html', filename=filename, inference=inference, percentage=percentage, cpval=cpval)
+    else:
+        flash('Allowed image types are -> png, jpg, jpeg, gif')
+        return render_template('inference.html')
 
 @app.route('/display/<filename>')
 def display_image(filename):
