@@ -1,4 +1,4 @@
-This app was made using Python 3.11.5 and pip 3.2
+This app was made using Python 3.11.5 and pip 23.3.1
 
 For first launch, run install.sh
 This will create a venv, install all required dependencies, and run the program
