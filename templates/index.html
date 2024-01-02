@@ -13,6 +13,9 @@
     <style>
       body {
         background-color: #004020;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
       }
 
       .aboutUs {
@@ -27,10 +30,10 @@
         padding-left: 19%;
         /* font-size: 1rem; */
       }
-      
+
       .separator {
         height: 5px;
-        background-color: #2E7601; /* Adjust color as needed */
+        background-color: #2e7601; /* Adjust color as needed */
         margin-top: 25px;
         margin-bottom: 25px;
         margin-left: 15%;
@@ -38,24 +41,22 @@
         max-width: 1400px;
       }
 
-    
-      .secondlead{
+      .secondlead {
         padding-left: 20px;
       }
-      
+
       .tooltip-inner {
         font-size: 20px; /* Adjust the font size as needed */
         /* background-color: transparent; */
       }
 
-
-      .tooltip-inner:hover{
+      .tooltip-inner:hover {
         background-color: transparent;
         color: transparent;
-        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
       }
 
-      ul{
+      ul {
         width: 100%;
         /* padding: 20px; */
         /* padding-top: 10px; */
@@ -66,37 +67,36 @@
       }
 
       li h1 h2 p {
-        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+        font-family: "Roboto", "Helvetica Neue", sans-serif;
       }
 
-      li{
-        padding:10px;
+      li {
+        padding: 10px;
         width: 80%;
         font-size: 20px;
       }
 
-      
       h2 {
         color: #1a8754;
       }
-      
+
       .akong {
         margin-top: 4%;
         padding-left: 25%;
       }
-      
+
       .btn {
-        height: 7rem;
-        font-size: 1rem;
+        height: fit-content;
+        padding: 1.5% 2%;
         border-radius: 2rem;
         border-width: 0.5rem;
         font-weight: 500;
-        font-size: 3rem;
+        font-size: 3vh;
         width: 30%;
-        background-image: linear-gradient(#DDEBD2, #5BA115);
-        color: #FFFFFF;
+        background-image: linear-gradient(#ddebd2, #5ba115);
+        color: #ffffff;
       }
-      
+
       .btn:hover {
         transform: scale(1.1);
         transition: 0.3s ease;
@@ -133,11 +133,11 @@
 
       .headerimg {
         position: relative;
-        height: 15rem;
+        height: 15%;
         background-size: cover;
         font-size: 5rem;
         font-weight: 900;
-        padding-top: 4rem;
+        padding-top: 2%;
         opacity: 1;
       }
 
@@ -150,43 +150,70 @@
         right: 0px;
         bottom: 0px;
         left: 0px;
-        opacity: 0.4; /* Adjust the opacity as needed (0.0 to 1.0) */
+        opacity: 0.4;
       }
 
       .headertxt {
         position: relative;
-        /* color: #005900; */
         margin-top: auto;
         text-align: center;
         justify-content: center;
-        font-size: 5rem;
-        font-weight: 1rem;
-        padding-top: 1rem;
-        z-index: 1; /* Ensure the text is above the background overlay */
+        z-index: 1;
+        font-size: 6vh;
       }
 
-      h1{
-        margin-top: auto;
+      /* .header {
+        height: fit-content;
+        padding: 3% 0;
+        position: relative;
+      }
+
+      .headerimg {
+        background-image: url(https://images.unsplash.com/photo-1621928372414-30e144d51d49?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWdyaWN1bHR1cmFsJTIwbGFuZHxlbnwwfHwwfHx8MA%3D%3D);
+        background-size: cover;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.4;
+        z-index: 1;
+      }
+
+      .header h1,
+      .header span {
         text-align: center;
-        justify-content: center;
-      }
-
-      
+        font-size: 6vh;
+        font-weight: 700;
+        opacity: 1 !important;
+        z-index: 2;
+      } */
     </style>
   </head>
 
   <body>
     <h1 class="headerimg text-center">
-      <div class="headertxt">
-        <span style="color: #72E077;">Nema</span><span style="color: #FFFFFF;">App</span>
+      <div class="headertxt d-flex justify-content-center align-items-center">
+        <span style="color: #72e077">Nema</span
+        ><span style="color: #ffffff">App</span>
       </div>
-    </h1>    
+    </h1>
+    <!-- <div class="header">
+      <div class="headerimg"></div>
+      <h1 style="color: #72e077">
+        Nema<span style="color: #ffffff">APP</span>
+      </h1>
+    </div> -->
     <div id="aboutUs">
-      <p class="lead" style="font-size: 25px;text-align: center;color: #B7C5BC;">
+      <p
+        class="lead"
+        style="font-size: 3vh; text-align: center; color: #b7c5bc"
+      >
         This application provide an automatic nematode image-based
         identification which developed based on deep learning approach. Nema-App
         accept images taken from microscopy, ideally at magnification of
-        40-1000, in jpeg or png format. 
+        40-1000, in jpeg or png format.
       </p>
       <!-- <div class="secondlead" style="font-size: 20px; text-align: justify; padding-left: 19%; padding-right: 19%;">
         <div style="text-align: justify;padding-left: 19%;">
@@ -206,31 +233,60 @@
         </ul>
       </div> -->
     </div>
-    <div class="container" style="background-color: #D6E8D5;max-width: max-content;">
-      <h1 style="color: #015F00;font-size: 2rem;">Menu</h1>
+    <div
+      class="container"
+      style="background-color: #d6e8d5; max-width: max-content"
+    >
+      <h1 style="text-align: center; color: #015f00; font-size: 4vh">Menu</h1>
       <div class="row row-cols-2">
-        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #497257;font-weight: 700;">
-           Parasitic 
+        <div
+          class="col-3 d-flex justify-content-end"
+          style="font-size: 2.5vh; color: #497257; font-weight: 700"
+        >
+          Parasitic
         </div>
-        <div class="col-12" style="text-align: justify;color: #015F00;max-width: 60%;font-size: large;"> 
-          classify the herbivores or parasitic nematodes based on its genus, including : Genus Criconema,
-          Genus Criconemoides, Genus Helicotylenchus, Genus Hemicycliophora, Genus Hirschmanniella, Genus Hoplolaimus,
-          Genus Meloidogyne, Genus Pratylenchus, Genus Radopholus, Genus Trichodorus, Genus Xiphinema.
+        <div
+          class="col-12"
+          style="
+            text-align: justify;
+            color: #015f00;
+            max-width: 60%;
+            font-size: 2.5vh;
+          "
+        >
+          classify the herbivores or parasitic nematodes based on its genus,
+          including : Genus Criconema, Genus Criconemoides, Genus
+          Helicotylenchus, Genus Hemicycliophora, Genus Hirschmanniella, Genus
+          Hoplolaimus, Genus Meloidogyne, Genus Pratylenchus, Genus Radopholus,
+          Genus Trichodorus, Genus Xiphinema.
         </div>
       </div>
       <div class="separator"></div>
       <div class="row row-cols-2">
-        <div class="col-3 d-flex justify-content-end" style="font-size: 2rem;color: #497257;font-weight: 700;">
+        <div
+          class="col-3 d-flex justify-content-end"
+          style="font-size: 2.5vh; color: #497257; font-weight: 700"
+        >
           Non-Parasitic
         </div>
-        <div class="col-10" style="text-align: justify;color: #015F00;margin-bottom: 2rem;max-width: 60%;font-size: large;">
-          classify the non prasitic nematode based on its feeding behaviour, including bacterivore, fungivore, and 
-          predator-omnivore. Moreover, this menu will provide the ecological indices value represented in c-p value.
+        <div
+          class="col-10"
+          style="
+            text-align: justify;
+            color: #015f00;
+            margin-bottom: 2.5vh;
+            max-width: 60%;
+            font-size: 2vh;
+          "
+        >
+          classify the non prasitic nematode based on its feeding behaviour,
+          including bacterivore, fungivore, and predator-omnivore. Moreover,
+          this menu will provide the ecological indices value represented in c-p
+          value.
         </div>
       </div>
     </div>
 
-    </div>
     <div class="akong hstack gap-5">
       <button
         type="button"
