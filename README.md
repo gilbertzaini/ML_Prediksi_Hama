@@ -26,6 +26,6 @@ The modules only need to be installed once (normally). To run the program again,
 2. python main.py / python3 main.py
 
 ## Known Issues and Temporary Fixes <a name="Issues"></a>
-1. bootstrap-flask causing problem (in Python 3.12)
+1. bootstrap-flask causing problem (in Python 3.12)<br/>
    Fix: See requirements.txt and app.py. Comment the lines that has the following #Comment this if flask_bootstrap is causing issues
 
